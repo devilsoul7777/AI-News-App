@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Typography } from '@material-ui/core';
 import wordsToNumbers from 'words-to-numbers';
 import alanBtn from '@alan-ai/alan-sdk-web';
+import Title from './Title';
 
 import { NewsCards, Modal } from './components';
 import useStyles from './styles';
@@ -50,7 +51,9 @@ const App = () => {
             <div className={classes.card}><Typography variant="h5" component="h2">Try saying: <br /><br />Go back</Typography></div>
           </div>
         ) : null}
-        <h1><b><i>WELCOME TO AI NEWS WEB-APP</i></b></h1>
+        <div className="App">
+          <Title />
+        </div>
       </div>
       <NewsCards articles={newsArticles} activeArticle={activeArticle} />
       <Modal isOpen={isOpen} setIsOpen={setIsOpen} />
